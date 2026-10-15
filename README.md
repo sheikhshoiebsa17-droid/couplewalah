@@ -1,6 +1,8 @@
 # CoupleWalah (कपलवाला) 💍🎁
 > *"Every Couple Has a Story. Make Yours Special."*
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/sheikhshoiebsa17-droid/couplewalah)
+
 CoupleWalah is a premium, full-stack couple-gifting and e-commerce platform dedicated exclusively to romantic gifts, personalized anniversary presents, matching couple jewelry, 3D custom photo lamps, secret surprise gifting, and curated love bundles.
 
 ---

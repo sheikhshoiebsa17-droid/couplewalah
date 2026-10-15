@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import { connectDB, disconnectDB } from '../config/db';
 import { Product } from '../models/Product';
 import { User } from '../models/User';
@@ -111,6 +112,10 @@ const SEED_PRODUCTS = [
 ];
 
 export async function seedDatabase() {
+  if (mongoose.connection.readyState !== 1) {
+    console.log('[CoupleWalah] Database not connected. Skipping automatic seed.');
+    return;
+  }
   try {
     const count = await Product.countDocuments();
     if (count === 0) {

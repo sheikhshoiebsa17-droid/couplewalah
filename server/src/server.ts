@@ -2,20 +2,19 @@ import app from './app';
 import { connectDB } from './config/db';
 import { seedDatabase } from './utils/seed';
 
-const PORT = process.env.PORT || 5000;
+const PORT = Number(process.env.PORT) || 5000;
 
 async function startServer() {
   try {
     await connectDB();
     await seedDatabase();
-
-    app.listen(PORT, () => {
-      console.log(`CoupleWalah API server listening on http://localhost:${PORT}`);
-    });
-  } catch (err) {
-    console.error('Failed to start CoupleWalah server:', err);
-    process.exit(1);
+  } catch (err: any) {
+    console.warn(`[CoupleWalah] Database initialization notice: ${err?.message || err}. Server will run and serve storefront.`);
   }
+
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`CoupleWalah server running on http://0.0.0.0:${PORT}`);
+  });
 }
 
 startServer();
